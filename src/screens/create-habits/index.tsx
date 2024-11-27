@@ -1,7 +1,7 @@
 import { View, Text } from "react-native";
 import { useState } from "react";
 
-import { ButtonComponent, TextInputOutlined } from "../../components/index";
+import { ButtonComponent, TextInputOutlined, CustomDropdown } from "../../components/index";
 import styles from "./styles";
 import { Icon } from "../../utils/Icon";
 
@@ -57,10 +57,10 @@ const CreateHabits = () => {
 
             <View style={styles.header}>
                 <Icon
-                iconFamily={'AntDesign'}
-                size={23}
-                style={{ color: 'black' }}
-                name={'close'}
+                    iconFamily={'AntDesign'}
+                    size={23}
+                    style={{ color: 'black' }}
+                    name={'close'}
                 />
                 <Text style={styles.createHabit}> Create Habit</Text>
             </View>
@@ -96,6 +96,25 @@ const CreateHabits = () => {
                     onChangeText={value => onChangeText("name", value)}
 
                     value={formData.name}
+                />
+
+                <CustomDropdown
+                    data={syllabusDummyData}
+                    value={formData.syllabusId}
+                    labelstyle={styles.labelstyle}
+                    selectedTextStyle={styles.selectedTextStyle}
+                    placeholderStyles={styles.placeholderStyles}
+                    dropdownStyle={styles.dropdownStyle}
+                    placeholderText={"Select syllabus"}
+                    headingLabel="Syllabus"
+                    showLabel={true}
+                    isError={error.syllabusId.hasError}
+                    onChange={value => onChangeText("syllabusId", value)}
+
+                    onIconClick={() => {
+
+                    }}
+
                 />
             </View>
         </View>
