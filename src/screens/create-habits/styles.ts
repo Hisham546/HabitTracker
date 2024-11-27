@@ -68,7 +68,18 @@ const styles = StyleSheet.create({
         color: colors.BLACK,
       
 
-    }
+    },
+
+    dropdownStyle: {
+       
+        width: deviceWidth * 0.80,
+        height: deviceHeight * 0.06,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: colors.GRAY_20,
+        color: colors.BLACK,
+        backgroundColor: colors.WHITE,
+    },
 
 
 })

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ButtonComponent, TextInputOutlined, CustomDropdown } from "../../components/index";
 import styles from "./styles";
 import { Icon } from "../../utils/Icon";
-
+import { habitFrequency } from "../../constants/dropdownOptions";
 
 
 
@@ -25,7 +25,8 @@ const CreateHabits = () => {
     const [formData, setFormData] = useState({
 
         name: '',
-        password: ''
+        description: '',
+        frequency: ''
 
 
 
@@ -99,17 +100,17 @@ const CreateHabits = () => {
                 />
 
                 <CustomDropdown
-                    data={syllabusDummyData}
-                    value={formData.syllabusId}
+                    data={habitFrequency}
+                    value={formData.frequency}
                     labelstyle={styles.labelstyle}
                     selectedTextStyle={styles.selectedTextStyle}
                     placeholderStyles={styles.placeholderStyles}
                     dropdownStyle={styles.dropdownStyle}
-                    placeholderText={"Select syllabus"}
-                    headingLabel="Syllabus"
+                    placeholderText={"Select Frequency"}
+                    headingLabel="Frequency"
                     showLabel={true}
-                    isError={error.syllabusId.hasError}
-                    onChange={value => onChangeText("syllabusId", value)}
+                    // isError={error.syllabusId.hasError}
+                    onChange={value => onChangeText("frequency", value)}
 
                     onIconClick={() => {
 
